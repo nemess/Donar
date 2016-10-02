@@ -1,0 +1,22 @@
+﻿<Window x:Class="Donar.Dialogs.NewDatabase"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Donar.Dialogs"
+        mc:Ignorable="d"
+        Title="Create New Database" Height="226.4" Width="343.1">
+    <Grid>
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="78,23,0,0" Text="Name:" VerticalAlignment="Top" />
+        <TextBox x:Name="DatabaseName" HorizontalAlignment="Left" Height="23" Margin="117,22,0,0" VerticalAlignment="Top" Width="165"/>
+        <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Margin="18,56,0,0"  Text="Source Language:" VerticalAlignment="Top"/>
+        <ComboBox x:Name="SourceLanguage" HorizontalAlignment="Left" Margin="118,50,0,0" VerticalAlignment="Top" Width="164"/>
+        <TextBlock x:Name="textBlock2" HorizontalAlignment="Left" Margin="22,81,0,0" Text="Target Language:" VerticalAlignment="Top"/>
+        <ComboBox x:Name="TargetLanguage" HorizontalAlignment="Left" Margin="118,81,0,0" VerticalAlignment="Top" Width="164"/>
+        <TextBlock x:Name="textBlock3" HorizontalAlignment="Left" Margin="24,115,0,0" Text="Database Folder:" VerticalAlignment="Top"/>
+        <TextBox x:Name="DatabaseFolder" HorizontalAlignment="Left" Height="23" Margin="118,112,0,0"  VerticalAlignment="Top" Width="164"/>
+        <Button x:Name="FolderButton" Content="..." HorizontalAlignment="Left" Margin="287,112,0,0" VerticalAlignment="Top" Width="28" Height="23" Click="FolderButton_Click"/>
+        <Button x:Name="OK" Content="OK" HorizontalAlignment="Left" Margin="117,155,0,0" VerticalAlignment="Top" Width="75" IsDefault="True" Click="OK_Click"/>
+        <Button x:Name="Cancel" Content="Cancel" HorizontalAlignment="Left" Margin="240,155,0,0" VerticalAlignment="Top" Width="75" IsCancel="True"/>
+    </Grid>
+</Window>

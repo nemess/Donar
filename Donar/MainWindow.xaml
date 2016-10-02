@@ -1,0 +1,41 @@
+﻿<Window x:Class="Donar.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Donar"
+        xmlns:controls="clr-namespace:Donar.Controls"
+        mc:Ignorable="d"
+        Title="Donar" Height="350" Width="525">
+    <Window.CommandBindings>
+        <CommandBinding Command="{x:Static local:MainWindow.WorkspaceCommand}"
+                        CanExecute="WorkspaceCommand_CanExecute" Executed="WorkspaceCommand_Execute"/>
+    </Window.CommandBindings>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25"/>
+            <RowDefinition/>
+            <RowDefinition Height="25"/>
+        </Grid.RowDefinitions>
+        <Menu x:Name="MainMenu" IsMainMenu="True" Margin="0">
+            <MenuItem Header="Workspace">
+                <MenuItem Header="New..." Command="{x:Static local:MainWindow.WorkspaceCommand}" CommandParameter="New"/>
+                <Separator/>
+                <MenuItem Header="Load..." Command="{x:Static local:MainWindow.WorkspaceCommand}" CommandParameter="Load"/>
+                <MenuItem Header="Save" Command="{x:Static local:MainWindow.WorkspaceCommand}" CommandParameter="Save" InputGestureText="Ctrl+S"/>
+                <Separator/>
+                <MenuItem Header="Import..." Command="{x:Static local:MainWindow.WorkspaceCommand}" CommandParameter="Import"/>
+                <MenuItem Header="Export..." Command="{x:Static local:MainWindow.WorkspaceCommand}" CommandParameter="Export"/>
+            </MenuItem>
+        </Menu>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="5*"/>
+                <ColumnDefinition Width="10*"/>
+            </Grid.ColumnDefinitions>
+            <ListBox x:Name="IdList" ScrollViewer.HorizontalScrollBarVisibility="Disabled" SelectionChanged="IdList_SelectionChanged" Margin="5"/>
+            <controls:TranslateView x:Name="TrView" Margin="5" Grid.Column="1"/>
+            <GridSplitter HorizontalAlignment="Left" Grid.Column="1" Width="8" ResizeDirection="Columns" Margin="-4,5,0,5" Background="Black"/>
+        </Grid>
+    </Grid>
+</Window>
