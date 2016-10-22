@@ -4,9 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DonarDatabase.Translate
+namespace Donar.Interfaces
 {
-    class UnitRecord
+    public enum TextType
     {
+        Source,
+        Target
     }
 }

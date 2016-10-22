@@ -4,14 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DonarDatabase.Translate
+namespace Donar.Interfaces
 {
     public interface ITranslate : IDictionary<string, IUnit>
     {
         /// <summary>
         /// Parent Donar database object
         /// </summary>
-        IDonarDb Donar { get; }
+        IDatabase Database { get; }
 
         /// <summary>
         /// True when any Unit is modified in this Database

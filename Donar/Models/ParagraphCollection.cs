@@ -3,13 +3,12 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TranslateDb = DonarDatabase.Translate;
 
 namespace Donar.Models
 {
     public class ParagraphCollection : ObservableCollection<Paragraph>
     {
-        public ParagraphCollection(TranslateDb.IUnit u)
+        public ParagraphCollection(Interfaces.IUnit u)
         {
             unit = u;
             CreateAll();
@@ -21,8 +20,8 @@ namespace Donar.Models
             string next = split.Target.Substring(charaterIndex);
             split.Target = split.Target.Substring(0, charaterIndex);
 
-            TranslateDb.IParagraph dbprg = unit[TranslateDb.TextType.Target].Insert(paragraphIndex+1);
-            dbprg.Paragraph = next;
+            Interfaces.IParagraph dbprg = unit[Interfaces.TextType.Target].Insert(paragraphIndex+1);
+            dbprg.Text = next;
 
             CreateAll();
         }
@@ -31,10 +30,10 @@ namespace Donar.Models
         {
             int removeIndex = paragraphIndex + 1;
 
-            TranslateDb.IText target = unit[TranslateDb.TextType.Target];
-            TranslateDb.IParagraph current = target[paragraphIndex];
-            TranslateDb.IParagraph remove = target[removeIndex];
-            current.Paragraph += remove.Paragraph;
+            Interfaces.ITextEntry target = unit[Interfaces.TextType.Target];
+            Interfaces.IParagraph current = target[paragraphIndex];
+            Interfaces.IParagraph remove = target[removeIndex];
+            current.Text += remove.Text;
 
             target.RemoveAt(removeIndex);
 
@@ -44,13 +43,13 @@ namespace Donar.Models
         void CreateAll()
         {
             Clear();
-            int maxIndex = Math.Max(unit[TranslateDb.TextType.Source].Count, unit[TranslateDb.TextType.Target].Count);
+            int maxIndex = Math.Max(unit[Interfaces.TextType.Source].Count, unit[Interfaces.TextType.Target].Count);
             for (int i = 0; i < maxIndex; ++i)
             {
                 Add(new Paragraph(unit, i));
             }
         }
 
-        TranslateDb.IUnit unit;
+        Interfaces.IUnit unit;
     }
 }

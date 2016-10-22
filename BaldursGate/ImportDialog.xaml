@@ -1,0 +1,22 @@
+﻿<Window x:Class="BaldursGate.ImportDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BaldursGate"
+        mc:Ignorable="d"
+        Title="Baldur's Gate Import from CVS file" Height="196.3" Width="523.2">
+    <Grid>
+        <Label x:Name="LabelGame" Content="Game:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="GameType" HorizontalAlignment="Left" Margin="53,12,0,0" VerticalAlignment="Top" Width="192">
+            <ComboBoxItem>Baldur's Gate 1</ComboBoxItem>
+            <ComboBoxItem>Baldur's Gate 2</ComboBoxItem>
+        </ComboBox>
+        <Label x:Name="LabelSource" Content="Source:" HorizontalAlignment="Left" Margin="5,60,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="SourceFile" HorizontalAlignment="Left" Height="23" Margin="53,64,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="377"/>
+        <Button x:Name="SelectFile" Content="..." HorizontalAlignment="Left" Margin="435,64,0,0" VerticalAlignment="Top" Width="25" Height="23"/>
+        <Button x:Name="ToSource" Content="To Source Language" HorizontalAlignment="Left" Margin="53,115,0,0" VerticalAlignment="Top" Width="130"/>
+        <Button x:Name="ToTartget" Content="To Target Langauge" HorizontalAlignment="Left" Margin="240,115,0,0" VerticalAlignment="Top" Width="130"/>
+        <Button Content="Close" HorizontalAlignment="Left" Margin="405,115,0,0" VerticalAlignment="Top" Width="75" IsCancel="True"/>
+    </Grid>
+</Window>

@@ -5,29 +5,28 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel;
-using TranslateDb = DonarDatabase.Translate;
 
 namespace Donar.Models
 {
     public class Paragraph : INotifyPropertyChanged
     {
 
-        public Paragraph(TranslateDb.IUnit u, int index)
+        public Paragraph(Interfaces.IUnit u, int index)
         {
             unit = u;
             ParagraphIndex = index < 0 ? 0 : index;
         }
         public int ParagraphIndex { get; private set; }
         public string Source {
-            get { return getString(TranslateDb.TextType.Source); } }
+            get { return getString(Interfaces.TextType.Source); } }
         public string Target {
             get {
-                return getString(TranslateDb.TextType.Target);
+                return getString(Interfaces.TextType.Target);
             }
             set {
-                if (ParagraphIndex < unit[TranslateDb.TextType.Target].Count)
+                if (ParagraphIndex < unit[Interfaces.TextType.Target].Count)
                 {
-                    unit[TranslateDb.TextType.Target][ParagraphIndex].Paragraph = value;
+                    unit[Interfaces.TextType.Target][ParagraphIndex].Text = value;
                     NotifyPropertyChanged("Target");
                 }
             }
@@ -40,15 +39,15 @@ namespace Donar.Models
         public event PropertyChangedEventHandler PropertyChanged = null;
 
 
-        string getString(TranslateDb.TextType type)
+        string getString(Interfaces.TextType type)
         {
             if (ParagraphIndex >= unit[type].Count)
             {
                 return null;
             }
-            return unit[type][ParagraphIndex].Paragraph;
+            return unit[type][ParagraphIndex].Text;
         }
 
-        TranslateDb.IUnit unit;
+        Interfaces.IUnit unit;
     }
 }

@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DonarDatabase.Translate
+namespace Donar.Interfaces
 {
     /// <summary>
     /// Reprecent on text, which can be 
     /// </summary>
-    public interface IText : IList<IParagraph>
+    public interface ITextEntry : IList<IParagraph>
     {
         /// <summary>
         /// Reference to the container History object
@@ -23,7 +23,7 @@ namespace DonarDatabase.Translate
         TextType Type { get; }
 
         /// <summary>
-        /// TRue when this string is modified
+        /// True when this string is modified
         /// </summary>
         bool IsModified { get; }
 

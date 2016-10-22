@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DonarDatabase.Translate
+namespace Donar.Interfaces
 {
     /// <summary>
     /// One Paragraph (Line) from the translation text
@@ -14,7 +14,7 @@ namespace DonarDatabase.Translate
         /// <summary>
         /// Reference to the container Text object
         /// </summary>
-        IText Text { get; }
+        ITextEntry TextEntry { get; }
 
         /// <summary>
         /// Zero based index of the paragraph in the text.
@@ -24,13 +24,13 @@ namespace DonarDatabase.Translate
         /// <summary>
         /// If it true, the Paragraph cannot be written (historical data)
         /// </summary>
-        bool IsReadOnly { get; }
+        //bool IsReadOnly { get; }
 
         /// <summary>
         /// Paragrpah text. It can be empty, but it cannot be null.
         /// It cannot contains end of line charaters (\n or \r).
         /// </summary>
-        string Paragraph { get; set; }
+        string Text { get; set; }
 
         bool IsModified { get; }
     }

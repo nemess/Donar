@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DonarDatabase.Translate
+namespace Donar.Interfaces
 {
     public interface IUnit
     {
@@ -24,7 +24,7 @@ namespace DonarDatabase.Translate
         /// </summary>
         /// <param name="type"></param>
         /// <returns></returns>
-        IText this[TextType type] { get; }
+        ITextEntry this[TextType type] { get; }
 
         /// <summary>
         /// True when any text is changed in this unit
@@ -34,6 +34,6 @@ namespace DonarDatabase.Translate
         /// <summary>
         /// Save all modifications in this unit
         /// </summary>
-        void Save();
+        //void Save();
     }
 }

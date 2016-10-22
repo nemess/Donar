@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{9B0B33E0-830C-42D9-AD40-3DBEA70241CE}</ProjectGuid>
+    <ProjectGuid>{71FB784A-2BA4-4E97-A733-27938A55751A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>DonarTest</RootNamespace>
@@ -50,17 +50,17 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="TranslateEntryTest.cs" />
+    <Compile Include="DatabaseImpTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DonarDatabase\DonarDatabase.csproj">
-      <Project>{fdf7cc4f-77fe-417b-82f8-4f0f28970d8b}</Project>
-      <Name>DonarDatabase</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Donar\Donar.csproj">
       <Project>{e1821dab-29d1-4993-b959-faf94a076962}</Project>
       <Name>Donar</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JsonDatabase\JsonDatabase.csproj">
+      <Project>{fdf7cc4f-77fe-417b-82f8-4f0f28970d8b}</Project>
+      <Name>JsonDatabase</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>

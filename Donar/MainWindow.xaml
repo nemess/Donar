@@ -8,8 +8,8 @@
         mc:Ignorable="d"
         Title="Donar" Height="350" Width="525">
     <Window.CommandBindings>
-        <CommandBinding Command="{x:Static local:MainWindow.WorkspaceCommand}"
-                        CanExecute="WorkspaceCommand_CanExecute" Executed="WorkspaceCommand_Execute"/>
+        <CommandBinding Command="{x:Static local:MainWindow.ProjectCommand}"
+                        CanExecute="ProjectCommand_CanExecute" Executed="ProjectCommand_Execute"/>
     </Window.CommandBindings>
     <Grid>
         <Grid.RowDefinitions>
@@ -18,14 +18,14 @@
             <RowDefinition Height="25"/>
         </Grid.RowDefinitions>
         <Menu x:Name="MainMenu" IsMainMenu="True" Margin="0">
-            <MenuItem Header="Workspace">
-                <MenuItem Header="New..." Command="{x:Static local:MainWindow.WorkspaceCommand}" CommandParameter="New"/>
+            <MenuItem Header="Project">
+                <MenuItem Header="New..." Command="{x:Static local:MainWindow.ProjectCommand}" CommandParameter="New"/>
                 <Separator/>
-                <MenuItem Header="Load..." Command="{x:Static local:MainWindow.WorkspaceCommand}" CommandParameter="Load"/>
-                <MenuItem Header="Save" Command="{x:Static local:MainWindow.WorkspaceCommand}" CommandParameter="Save" InputGestureText="Ctrl+S"/>
+                <MenuItem Header="Load..." Command="{x:Static local:MainWindow.ProjectCommand}" CommandParameter="Load"/>
+                <MenuItem Header="Save" Command="{x:Static local:MainWindow.ProjectCommand}" CommandParameter="Save" InputGestureText="Ctrl+S"/>
                 <Separator/>
-                <MenuItem Header="Import..." Command="{x:Static local:MainWindow.WorkspaceCommand}" CommandParameter="Import"/>
-                <MenuItem Header="Export..." Command="{x:Static local:MainWindow.WorkspaceCommand}" CommandParameter="Export"/>
+                <MenuItem Header="Import..." Command="{x:Static local:MainWindow.ProjectCommand}" CommandParameter="Import"/>
+                <MenuItem Header="Export..." Command="{x:Static local:MainWindow.ProjectCommand}" CommandParameter="Export"/>
             </MenuItem>
         </Menu>
         <Grid Grid.Row="1">
